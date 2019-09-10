@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="/">add engineers</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="/view">view engineers <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                    <a class="nav-link" href="/search/:pincode">search for engineer<span class="sr-only">(current)</span></a>
+                    </li>
+
+                  </ul>
+                </div>
+              </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                    <form action="/read1" method="POST">
+                <table class="table">
+                        <tr><td>engg name</td><td><input type="text" name="name1"></td></tr>
+                        <tr><td>engg address</td><td><input type="text" name="add1"></td></tr>
+                        <tr><td>engg description</td><td><input type="text" name="des1"></td></tr> 
+                        <tr><td>phone</td><td><input type="text" name="phone1"></td></tr>
+                        <tr><td>rate</td><td><input type="text" name="rate1"></td></tr>
+                        <tr><td>image</td><td><input type="text" name="image1"></td></tr>
+                        <tr><td>pincode</td><td><input type="text" name="pincode1"></td></tr>
+
+                        <tr><td></td><td><button class="btn btn-success"type="submit">submit</button></td></tr> 
+               
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+        
+</body>
+</html>
