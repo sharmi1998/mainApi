@@ -5,9 +5,9 @@ var request=require('request')
 const session=require('express-session');
 app.use(session({secret: 'ssshhhhh'}));
 const Mongoose=require('mongoose');
-const viewall="http://localhost:3001/viewall"
-const getdata="http://localhost:3001/getdata"
-const viewuser="http://localhost:3001/viewuser"
+// const viewall="http://localhost:3001/viewall"
+// const getdata="http://localhost:3001/getdata"
+// const viewuser="http://localhost:3001/viewuser"
 app.set('view engine','ejs')
 app.use(Express.static(__dirname+"/public"));
 app.use(bodyParser.json());
@@ -278,19 +278,19 @@ app.get('/viewall',(req,res)=>{
  })
 //to view a single workser Api
 
- app.get('/readmore/:id',(req,res)=>{
+//  app.get('/readmore/:id',(req,res)=>{
 
-    const x=req.params.id;
-   const read="http://localhost:3001/getAempApi/"+x;
-    request(read,(error,response,body)=>
-{
-   var data=JSON.parse(body);
-   console.log(data);
-   res.render('readmore',{data:data[0]});
+//     const x=req.params.id;
+//    const read="http://localhost:3001/getAempApi/"+x;
+//     request(read,(error,response,body)=>
+// {
+//    var data=JSON.parse(body);
+//    console.log(data);
+//    res.render('readmore',{data:data[0]});
 
-})
+// })
     
-});
+// });
  //to view the all workers details
  app.get('/view',(req,res)=>{
     request(viewall,(error,response,body)=>{
