@@ -195,6 +195,19 @@ app.post('/delete',(req,res)=>
         }
     });
 });
+//delete plumper details
+app.post('/delete1',(req,res)=>
+{
+    PlumperModel.remove({_id:req.body[0]._id},(error,response)=>{
+        if(error)
+        {
+            throw error;
+        }
+        else{
+            res.send(response);
+        }
+    });
+});
 //updating a worker details
 
 app.post('/update',(req,res)=>{
@@ -210,7 +223,20 @@ app.post('/update',(req,res)=>{
         }
     })
 })
+//update plumper details
+app.post('/update1',(req,res)=>{
 
+    console.log(req.body)
+    PlumperModel.findOneAndUpdate({_id:req.body._id},
+    req.body,(error,response)=>{
+        if(error){
+            throw error;
+        }
+        else{
+            res.send(response)
+        }
+    })
+})
 //viewing all worker deails Api
 app.get('/viewall',(req,res)=>{
 
@@ -295,6 +321,19 @@ app.get('/search/:pincode',(req,res)=>{
     var ph=req.params.pincode;
     //var phonenum=new EmployeeModel(req.body);
     WorkerModel.find({pincode:ph},(error,data)=>{
+        if(error){
+            throw error;
+        }
+        else{
+            res.send(data)
+        }
+    })
+})
+//plumper search
+app.get('/search1/:pincode1',(req,res)=>{
+    var ph=req.params.pincode1;
+    //var phonenum=new EmployeeModel(req.body);
+    PlumperModel.find({pincode1:ph},(error,data)=>{
         if(error){
             throw error;
         }
