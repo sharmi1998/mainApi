@@ -60,7 +60,9 @@ var RegistrationModel=Mongoose.model("registration",{
     mailid:String,
     password:String
 });
-Mongoose.connect("mongodb://localhost:27017/workersdb")
+// Mongoose.connect("mongodb://localhost:27017/workersdb")
+Mongoose.connect("mongodb+srv://sharmi1998:sharmi1998@cluster0-rwxfj.mongodb.net/test?retryWrites=true&w=majority")
+
 app.get('/',(req,res)=>{
     res.render('home')
     
